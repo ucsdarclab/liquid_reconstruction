@@ -1,7 +1,8 @@
 # Image Based Reconstruction of Liquids from 2D Surface Detections
-arxiv: https://arxiv.org/abs/2111.11491
 
 ## Still under construction! ##
+
+arxiv: https://arxiv.org/abs/2111.11491
 
 ## Environment set up: ##
 Tested with Python 3.8, PyTorch 1.7.1, CUDA 11.0 and PyTorch3D 0.4.0
@@ -21,8 +22,23 @@ gh repo clone bango123/SmoothParticleNets
 cd SmoothParticleNets
 python setup.py install
 ```
+Install dependencies for this repo (Open3d for visualization and trimesh & mesh-to-sdf to generate SDF's from mesh):
+```
+pip install open3d
+pip install trimesh
+pip install mesh-to-sdf
+```
+
 Install this repo
 ```
 cd ..
+conda install -c anaconda sympy
 gh repo clone ucsdarclab/liquid_reconstruction
+```
+
+
+### Run Example Code ###
+While not perfectly tuned, an example of PBF simulation (https://mmacklin.com/pbf_sig_preprint.pdf) is presnted in simulateBox.py. This is to show how the functional components in differentiableFluid.py behave.
+```
+python simulateBox.py
 ```
