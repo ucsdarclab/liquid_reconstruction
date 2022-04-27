@@ -11,7 +11,7 @@ from differentiableFluidSim import FluidGravityForce, uniformSource,\
 from utils import generateSDF_approx
 
 # Simulation parameters:
-dt = 1/30.0
+dt = 1/60.0
 num_particles_emitted_per_frame = 1
 gravity_force = [0, 0, 9.8]
 max_particle_velocity = 2
@@ -53,7 +53,7 @@ if __name__ == "__main__":
     fluid_viscosity = XsphViscosity(radius=interaction_radius).cuda()
 
     # Source location of liquid:
-    source_init_loc_torch = torch.tensor([0.5, 0.05, 0.95], dtype=torch.float32).reshape((1, 1, -1)).cuda()
+    source_init_loc_torch = torch.tensor([0.5, 0.05, 0.8], dtype=torch.float32).reshape((1, 1, -1)).cuda()
     source_init_vel_torch = torch.tensor([0.0,0.0,0.0], dtype=torch.float32).reshape((1, 1, -1)).cuda()
     locs, vel = uniformSource(source_init_loc_torch, source_init_vel_torch,
                               num_particles_emitted_per_frame, 1, 0.01)
